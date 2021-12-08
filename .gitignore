@@ -1,0 +1,5 @@
+/.node-persist
+/_IGNORE_session
+/logs
+/node_modules
+/session.data.json
