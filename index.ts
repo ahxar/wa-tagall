@@ -16,13 +16,13 @@ function start(client: wa.Client) {
     client.onAnyMessage(async message => {
         // tagall members on group chat
         if (message.body === '!tagall') {
-        const getMemberIds = await client.getGroupMembersId(message.chatId as any);
-        const tagMembers = getMemberIds.filter(id => id !== message.sender.id)
-        .map((id: string) => {
-            id = "@" + id.replace('@c.us', '');
-            return id;
-        });
-        client.sendTextWithMentions(message.chatId, tagMembers.join(' '));
-      }
+            const getMemberIds = await client.getGroupMembersId(message.chatId as any);
+            const tagMembers = getMemberIds.filter(id => id !== message.sender.id)
+            .map((id: string) => {
+                id = "@" + id.replace('@c.us', '');
+                return id;
+            });
+            client.sendTextWithMentions(message.chatId, tagMembers.join(' '));
+        }
     });
 }
